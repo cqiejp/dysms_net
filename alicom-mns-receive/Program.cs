@@ -95,8 +95,8 @@ namespace alicom_mns_receive
                 Console.Write(e.ErrorCode);
                 Console.Write(e.Message);
             }
-            return response;
 
+            return response;
         }
 
         public static QuerySendDetailsResponse querySendDetails(String bizId)
@@ -131,6 +131,7 @@ namespace alicom_mns_receive
             {
                 Console.WriteLine(e.ErrorCode);
             }
+
             return querySendDetailsResponse;
         }
 
