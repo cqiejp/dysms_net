@@ -164,7 +164,6 @@ namespace alicom_mns_receive
                     Console.WriteLine("Template=" + smsSendDetailDTO.TemplateCode);
                 }
             }
-
         }
     }
 }

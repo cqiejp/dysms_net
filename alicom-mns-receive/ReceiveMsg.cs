@@ -16,7 +16,6 @@ namespace alicom_mns_receive
 {
     public class ReceiveMsg
     {
-
         private static int maxThread = 2;
         static String accessId = "";
         static String accessSecret = "";
@@ -56,16 +55,21 @@ namespace alicom_mns_receive
     }
 
 
-
     class TestTask
     {
         private object o = new object();
         private int sleepTime = 50;
+
         public String name { get; private set; }
+
         public String messageType { get; private set; }
+
         public String queueName { get; private set; }
+
         public int TaskID { get; private set; }
+
         public IAcsClient acsClient { get; private set; }
+
         public TestTask(String name, String messageType, String queueName, IAcsClient acsClient)
         {
             this.name = name;
@@ -73,10 +77,12 @@ namespace alicom_mns_receive
             this.queueName = queueName;
             this.acsClient = acsClient;
         }
+
         long bufferTime = 60 * 2;//过期时间小于2分钟则重新获取，防止服务器时间误差
         String mnsAccountEndpoint = "https://1943695596114318.mns.cn-hangzhou.aliyuncs.com/";//阿里通信消息的endpoint,固定
         Dictionary<string, QueryTokenForMnsQueueResponse.QueryTokenForMnsQueue_MessageTokenDTO> tokenMap = new Dictionary<string, QueryTokenForMnsQueueResponse.QueryTokenForMnsQueue_MessageTokenDTO>();
         Dictionary<string, Queue> queueMap = new Dictionary<string, Queue>();
+
         public QueryTokenForMnsQueueResponse.QueryTokenForMnsQueue_MessageTokenDTO GetTokenByMessageType(IAcsClient acsClient, String messageType)
         {
             QueryTokenForMnsQueueRequest request = new QueryTokenForMnsQueueRequest();
@@ -85,6 +91,7 @@ namespace alicom_mns_receive
             QueryTokenForMnsQueueResponse.QueryTokenForMnsQueue_MessageTokenDTO token = queryTokenForMnsQueueResponse.MessageTokenDTO;
             return token;
         }
+
         /// 处理消息
         public void Handle()
         {
