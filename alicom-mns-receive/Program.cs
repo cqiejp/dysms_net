@@ -19,6 +19,7 @@ namespace alicom_mns_receive
         // TODO 此处需要替换成开发者自己的AK(在阿里云访问控制台寻找)
         const String accessKeyId = "yourAccessKeyId";
         const String accessKeySecret = "yourAccessKeySecret";
+
         public static SendSmsResponse sendSms()
         {
             IClientProfile profile = DefaultProfile.GetProfile("cn-hangzhou", accessKeyId, accessKeySecret);

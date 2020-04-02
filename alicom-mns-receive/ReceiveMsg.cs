@@ -14,9 +14,7 @@ using System.Threading.Tasks;
 
 namespace alicom_mns_receive
 {
-
-
-    class ReceiveMsg
+    public class ReceiveMsg
     {
 
         private static int maxThread = 2;
@@ -48,7 +46,7 @@ namespace alicom_mns_receive
             InitData();
             for (int i = 0; i < maxThread; i++)
             {
-                TestTask testTask = new TestTask("PullMessageTask-thread-" + i, messageType, queueName, acsClient);          
+                TestTask testTask = new TestTask("PullMessageTask-thread-" + i, messageType, queueName, acsClient);
                 Thread t = new Thread(new ThreadStart(testTask.Handle));
                 //启动线程
                 t.Start();

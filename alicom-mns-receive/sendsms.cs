@@ -10,7 +10,7 @@ using Aliyun.Acs.Dysmsapi.Model.V20170525;
 
 namespace alicom_mns_receive
 {
-    class Sendsms
+    public class Sendsms
     {
         static String product = "Dysmsapi";//短信API产品名称
         static String domain = "dysmsapi.aliyuncs.com";//短信API产品域名
