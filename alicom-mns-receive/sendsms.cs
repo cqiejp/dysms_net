@@ -17,10 +17,9 @@ namespace alicom_mns_receive
         static String accessId = "";
         static String accessSecret = "";
         static String regionIdForPop = "cn-hangzhou";
+
         static void Main2(string[] args)
         {
-
-
             IClientProfile profile = DefaultProfile.GetProfile(regionIdForPop, accessId, accessSecret);
             DefaultProfile.AddEndpoint(regionIdForPop, regionIdForPop, product, domain);
             IAcsClient acsClient = new DefaultAcsClient(profile);
